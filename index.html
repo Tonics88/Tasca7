@@ -1,0 +1,30 @@
+<html>
+    <head>
+        <meta charset="UTF-8" name="viewport" content="width=device-width, initial-scale=1">
+        <title>Tasca 7 - Càlcul del dia de la setmana</title>
+        <!-- Llibreries de bootstrap afegides directament d'internet-->
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+        <script src="js/llegirnumero.js"></script>
+        <script src="js/calculdiasetmana.js"></script>
+    </head>
+    <body>
+        <script>
+            var data={
+                dia: prompt("Introdueix un dia"),
+                mes: prompt("Introdueix un mes"),
+                any: prompt("Introdueix un any entre 1700 i 2299")
+            }
+
+            for (i in data){
+                document.writeln(data[i]);
+            }
+            
+            data=(checkData(data));
+
+            for (i in data){
+                document.writeln(data[i]);
+            }
+
+        </script>
+    </body>
+</html>
