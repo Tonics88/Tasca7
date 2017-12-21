@@ -28,9 +28,15 @@ function calculDiaSetmana(x){
 
 }
 
-function calendarConstructor(x,mes){
-    var x=x.dia;//var dia de la setmana triat
+function calendarConstructor(data,mes){
+    var x=data.dia;//var dia de la setmana triat
     var y=0;//var que indica dia de la setmana de dia 1 d'aquest mes
+    var z=mes.dies[data.mes-1];
+    console.log(data.mes);
+    console.log(data.mes-1);
+    console.log(mes.dies[data.mes-1]);
+    console.log(mes.dies[0]);
+
     var dia=["Dilluns","Dimarts","Dimecres","Dijous","Divendres","Dissabte","Diumenge"];
     document.write('<div class="grid-container">');
     for (i=0;i<7;i++){
@@ -40,7 +46,7 @@ function calendarConstructor(x,mes){
         document.write('<div class="grid-prev-item"><br>'+(31-i)+'</div>');
     }
     var contse=y;
-    for (i=0;i<31;i++){
+    for (i=0;i<z;i++){
         if (contse==7){
             contse=0;
         }
