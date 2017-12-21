@@ -1,0 +1,35 @@
+.grid-container {
+    display: grid;
+    background-color: grey;
+    padding: 200px 150px;
+    grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr 1fr;
+}
+.grid-item {
+    background-color: rgba(255, 255, 255, 0.8);
+    border: 1px solid rgba(0, 0, 0, 0.8);
+    padding: 10px;
+    font-size: 30px;
+    text-align: right;
+}
+.grid-select-item {
+    background-color: red;
+    border: 1px solid rgba(0, 0, 0, 0.8);
+    padding: 10px;
+    font-size: 30px;
+    text-align: right;
+}
+.grid-dia-item {
+    background-color: darkorange;
+    border: 1px solid rgba(0, 0, 0, 0.8);
+    padding: 10px;
+    font-size: 30px;
+    text-align: center;
+}
+.grid-prev-item {
+    background-color: darkgrey;
+    color:lightgrey;
+    border: 1px solid rgba(0, 0, 0, 0.8);
+    padding: 10px;
+    font-size: 30px;
+    text-align: right;
+}

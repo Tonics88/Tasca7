@@ -1,5 +1,5 @@
-function checkData(x){
-    var mes=["gener","febrer","març","abril","maig","juny","juliol","agost","setembre","octubre","novembre","decembre"];
+function dataCheck(x,y){
+    var mes=y.nom;
     while (x.any<1700 || x.any>2299){
         //añadir contador de numero de intentos
         x.any=prompt("Any no compres entre 1700 i 2299 \nIntrodueix un altre any per favor")
@@ -26,4 +26,33 @@ function checkData(x){
 
 function calculDiaSetmana(x){
 
+}
+
+function calendarConstructor(x,mes){
+    var x=x.dia;//var dia de la setmana triat
+    var y=0;//var que indica dia de la setmana de dia 1 d'aquest mes
+    var dia=["Dilluns","Dimarts","Dimecres","Dijous","Divendres","Dissabte","Diumenge"];
+    document.write('<div class="grid-container">');
+    for (i=0;i<7;i++){
+        document.write('<div class="grid-dia-item">'+dia[i]+'</div>');
+    }
+    for (i=y;i>0;i--){
+        document.write('<div class="grid-prev-item"><br>'+(31-i)+'</div>');
+    }
+    var contse=y;
+    for (i=0;i<31;i++){
+        if (contse==7){
+            contse=0;
+        }
+        if (i+1==x){
+            document.write('<div class="grid-select-item"><br>'+(i+1)+'</div>');
+        } else {
+            document.write('<div class="grid-item"><br>'+(i+1)+'</div>');
+        }
+        contse=contse+1;
+    }  
+    for (i=0;i<(7-contse);i++){
+        document.write('<div class="grid-prev-item"><br>'+(i+1)+'</div>');
+    }
+    document.write("</div>");
 }

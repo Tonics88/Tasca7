@@ -4,26 +4,32 @@
         <title>Tasca 7 - Càlcul del dia de la setmana</title>
         <!-- Llibreries de bootstrap afegides directament d'internet-->
         <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
-        <script src="js/llegirnumero.js"></script>
+        <link rel="stylesheet" type="text/css" href="css/calendar.css" />
         <script src="js/calculdiasetmana.js"></script>
     </head>
     <body>
         <script>
+            var mes={
+                nom: ["gener","febrer","març","abril","maig","juny","juliol","agost","setembre","octubre","novembre","decembre"],
+                dies: [31,28,31,30,31,30,31,31,30,31,30,31]
+            }
             var data={
                 dia: prompt("Introdueix un dia"),
                 mes: prompt("Introdueix un mes"),
                 any: prompt("Introdueix un any entre 1700 i 2299")
             }
-
+            //data introduida
             for (i in data){
                 document.writeln(data[i]);
             }
-            
-            data=(checkData(data));
-
+            //miram si es correcte
+            data=(dataCheck(data,mes));
+            //data modificada
             for (i in data){
                 document.writeln(data[i]);
             }
+
+            calendarConstructor(data,mes)
 
         </script>
     </body>
