@@ -8,6 +8,8 @@
         <script src="js/calculdiasetmana.js"></script>
     </head>
     <body>
+     <!-- Aquesta pagina web ens diu el dia de la setmana de la data entrada,
+        com extra ho mostran gràficament construint un calendari amb css -->
         <script>
             var mes={
                 nom: ["gener","febrer","març","abril","maig","juny","juliol","agost","setembre","octubre","novembre","decembre"],
@@ -28,9 +30,12 @@
             for (i in data){
                 document.writeln(data[i]);
             }
-            console.log(data.mes);
-            calendarConstructor(data,mes)
+
+            var y = calculDiaSetmana(data);
+            
+            calendarConstructor(data,mes,y);
 
         </script>
+    <!-- Pagina web creada per en Toni Caballero Salas -->
     </body>
 </html>

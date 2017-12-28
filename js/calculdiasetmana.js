@@ -46,13 +46,52 @@ console.log(esBisiesto(x));
     return x;
 }
 
-function calculDiaSetmana(x){
-
+function valorSegle(any){
+    var segles={
+        anys: [1799,1899,1999,2099,2199,2299],
+        valor: [5,3,1,0,-2,-4]
+    }
+    for(i in segles.anys){
+        if (any<=segles.anys[i]){
+                return segles.valor[i];
+        }
+    }
 }
 
-function calendarConstructor(data,mes){
+function valorAny(any){
+    return Math.trunc(any+any/4);
+}
+
+function valorBisiesto(x){
+    if (esBisiesto(x) && (x.mes==1 || x.mes==2)){
+        return -1;
+    } else {
+        return 0;
+    }
+}
+
+function valorMes(mes){
+    valor=[6,2,2,5,0,3,5,1,4,6,2,4]
+    return valor[mes-1];
+}
+
+function calculDiaSetmana(x){
+    var diaSet={
+        A:valorSegle(x.any),
+        B:valorAny(parseInt(x.any.substring(x.any.length-2, x.any.length))),
+        C:valorBisiesto(x),
+        D:valorMes(x.mes),
+        E:1,//en teoria es el dia triat
+        R:0
+    }
+    R=(diaSet.A+diaSet.B+diaSet.C+diaSet.D+diaSet.E)%7
+    console.log(diaSet);
+    return (R+6)%7;
+}
+
+function calendarConstructor(data,mes,y){
     var x=data.dia;//var dia de la setmana triat
-    var y=0;//var que indica dia de la setmana de dia 1 d'aquest mes
+    //var y=0;//var que indica dia de la setmana de dia 1 d'aquest mes
     var z=mes.dies[data.mes-1];
 
     var dia=["Dilluns","Dimarts","Dimecres","Dijous","Divendres","Dissabte","Diumenge"];
@@ -80,3 +119,4 @@ function calendarConstructor(data,mes){
     }
     document.write("</div>");
 }
+//web d'on hem tret l'algoritme: https://www.gaussianos.com/como-calcular-que-dia-de-la-semana-fue/
