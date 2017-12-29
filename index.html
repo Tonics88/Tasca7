@@ -20,22 +20,27 @@
                 mes: prompt("Introdueix un mes"),
                 any: prompt("Introdueix un any entre 1700 i 2299")
             }
-            //data introduida
-            for (i in data){
-                document.writeln(data[i]);
-            }
-            //miram si es correcte
+            //Data introduida
+            console.log(data);
+            //Miram si es correcte
             data=(dataCheck(data,mes));
-            //data modificada
-            for (i in data){
-                document.writeln(data[i]);
-            }
+            //Data modificada
+            console.log(data);
 
-            var y = calculDiaSetmana(data);
-            
-            calendarConstructor(data,mes,y);
-
+            var diaSetmana = calculDiaSetmana(data);
+            document.write( "<div class='grid'>"+
+                                "<div class='a'>"+
+                                    "Dia "+data.dia+" de "+data.mes+" de "+data.any+
+                                "</div>"+
+                                "<div class='c'>");
+                                    calendarConstructor(data,mes,diaSetmana);
+            document.write(     "</div>"+
+                                "<div class='d'>"+
+                                    '<a href="index.html" class="btn btn-default btn-lg active" role="button">Nova data</a>'+
+                                "</div>"+
+                            "</div>")
         </script>
+        
     <!-- Pagina web creada per en Toni Caballero Salas -->
     </body>
 </html>
