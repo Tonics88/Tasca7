@@ -1,7 +1,7 @@
 //Funció que donat un any ens torna true si es "bisiesto" o false en cas contrari.
 function esBisiesto(x){
-    if ( !(parseInt(x.any.substring( (x.any.length-2, x.any.length)))%4 && (x.any.substring(x.any.length-2, x.any.length))!="00")
-    || x.any.substring(x.any.length-2, x.any.length)=="00" && (parseInt(x.any.substring(x.any.length-2, x.any.length))%400)==0){
+    if ( (parseInt(x.any.substring(x.any.length-2))%4==0 && (x.any.substring(x.any.length-2))!="00")
+    || x.any.substring(x.any.length-2)=="00" && (parseInt(x.any.substring(x.any.length-2))%400)==0){
         //En cas afirmatiu modificam els dies del mes de febrer de 28 a 29.
         mes.dies[1]=29;
         return true;
