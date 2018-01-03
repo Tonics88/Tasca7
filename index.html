@@ -12,8 +12,9 @@
         com extra ho mostran gràficament construint un calendari amb css -->
         <script>
             var mes={
-                nom: ["gener","febrer","març","abril","maig","juny","juliol","agost","setembre","octubre","novembre","decembre"],
-                dies: [31,28,31,30,31,30,31,31,30,31,30,31]
+                nom: ["de gener","de febrer","de març","d'abril","de maig","de juny","de juliol","d'agost","de setembre","d'octubre","de novembre","de decembre"],
+                dies: [31,28,31,30,31,30,31,31,30,31,30,31],
+                dia: ["Dilluns","Dimarts","Dimecres","Dijous","Divendres","Dissabte","Diumenge"]
             }
             var data={
                 dia: prompt("Introdueix un dia"),
@@ -29,14 +30,14 @@
 
             var diaSetmana = calculDiaSetmana(data);
             document.write( "<div class='grid'>"+
-                                "<div class='a'>"+
-                                    "Dia "+data.dia+" de "+data.mes+" de "+data.any+
+                                "<div class='head'>"+
+                                    "Dia "+data.dia+" "+mes.nom[data.mes-1]+" de "+data.any+" és: "+mes.dia[(diaSetmana+((data.dia-1)%7))%7]+
                                 "</div>"+
-                                "<div class='c'>");
+                                "<div class='main'>");
                                     calendarConstructor(data,mes,diaSetmana);
             document.write(     "</div>"+
-                                "<div class='d'>"+
-                                    '<a href="index.html" class="btn btn-default btn-lg active" role="button">Nova data</a>'+
+                                "<div class='foot'>"+
+                                    '<a href="index.html" class="btn btn-default btn-lg active" role="button">Introduir una nova data</a>'+
                                 "</div>"+
                             "</div>")
         </script>

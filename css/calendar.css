@@ -6,9 +6,9 @@
     text-align: center;
   }
   
-.a { grid-area:head; background:blue; padding: 10px; font-size: 200%;}
-.c { grid-area:main; background:green; padding: 10px 50px; }
-.d { grid-area:foot; background:orange; padding: 10px; }
+.head { grid-area:head; background:darkseagreen; padding: 10px; font-size: 200%;}
+.main { grid-area:main; background:darkslategrey; padding: 10px 50px; }
+.foot { grid-area:foot; background:darkseagreen; padding: 10px; }
 
 /*Estil del calendari creat a la funció calendarConstructor*/
 .grid-container {
@@ -20,21 +20,21 @@
     background-color: rgba(255, 255, 255, 0.8);
     border: 1px solid rgba(0, 0, 0, 0.8);
     padding: 10px;
-    font-size: 30px;
+    font-size: 150%;
     text-align: right;
 }
 .grid-select-item {
     background-color: red;
     border: 1px solid rgba(0, 0, 0, 0.8);
     padding: 10px;
-    font-size: 30px;
+    font-size: 150%;
     text-align: right;
 }
 .grid-dia-item {
     background-color: darkorange;
     border: 1px solid rgba(0, 0, 0, 0.8);
     padding: 10px;
-    font-size: 30px;
+    font-size: 200%;
     text-align: center;
 }
 .grid-prev-item {
@@ -42,6 +42,6 @@
     color:lightgrey;
     border: 1px solid rgba(0, 0, 0, 0.8);
     padding: 10px;
-    font-size: 30px;
+    font-size: 150%;
     text-align: right;
 }

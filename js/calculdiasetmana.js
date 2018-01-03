@@ -76,13 +76,11 @@ function calculDiaSetmana(x){
 }
 
 function calendarConstructor(data,mes,primerDiaMes){
-    //Array amb els noms dels dies de la setmana per poder constriur el calendari.
-    var dia=["Dilluns","Dimarts","Dimecres","Dijous","Divendres","Dissabte","Diumenge"];
     //Començam el div que contendrà el calendaria.
     document.write('<div class="grid-container">');
     //Primera fila del calendari amb els noms dels dies de la setmana fent servir l'array anterior.
     for (i=0;i<7;i++){
-        document.write('<div class="grid-dia-item">'+dia[i]+'</div>');
+        document.write('<div class="grid-dia-item">'+mes.dia[i]+'</div>');
     }
     //Cream els div dels dies previs al primer del mes triat si aquest no comença amb dilluns.
     for (i=primerDiaMes;i>0;i--){
