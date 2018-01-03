@@ -1,7 +1,7 @@
 //Funció que donat un any ens torna true si es "bisiesto" o false en cas contrari.
 function esBisiesto(x){
-    if ( (x.any.substring( (x.any.length-2, x.any.length))%4 && (x.any.substring(x.any.length-2, x.any.length))!="00")
-    || x.any.substring(x.any.length-2, x.any.length)=="00" && (x.any.substring(x.any.length-2, x.any.length)%400)==0){
+    if ( !(parseInt(x.any.substring( (x.any.length-2, x.any.length)))%4 && (x.any.substring(x.any.length-2, x.any.length))!="00")
+    || x.any.substring(x.any.length-2, x.any.length)=="00" && (parseInt(x.any.substring(x.any.length-2, x.any.length))%400)==0){
         //En cas afirmatiu modificam els dies del mes de febrer de 28 a 29.
         mes.dies[1]=29;
         return true;
@@ -84,7 +84,7 @@ function calendarConstructor(data,mes,primerDiaMes){
     }
     //Cream els div dels dies previs al primer del mes triat si aquest no comença amb dilluns.
     for (i=primerDiaMes;i>0;i--){
-        document.write('<div class="grid-prev-item"><br>'+(mes.dies[data.mes-2]-i+1)+'</div>');
+        document.write('<div class="grid-prev-item"><br>'+(mes.dies[(parseInt(data.mes)+10)%12]-i+1)+'</div>');
     }
     //Controla a quin dia de la setmana ens trobam quan construim el calendari div a div
     //així sabem quants de dies queden per omplir la setmana fins al diumenge del seguent mes.
